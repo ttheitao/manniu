@@ -37,9 +37,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
+//        $this->mapWebRoutes();
 
-        //
+        $this->mapWebPcRoutes();
+
+        $this->mapWebMobileRoutes();
     }
 
     /**
@@ -54,6 +56,24 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+    }
+
+    // PC端路由
+    protected function mapWebPcRoutes()
+    {
+        Route::middleware('web')
+            ->domain(config('manniu.system.pc_url'))
+            ->namespace($this->namespace . '\Pc')
+            ->group(base_path('routes/pc.php'));
+    }
+
+    // 移动端路由
+    protected function mapWebMobileRoutes()
+    {
+        Route::middleware('web')
+            ->domain(config('manniu.system.mobile_url'))
+            ->namespace($this->namespace . '\Mobile')
+            ->group(base_path('routes/mobile.php'));
     }
 
     /**
