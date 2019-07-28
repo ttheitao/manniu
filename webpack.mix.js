@@ -11,5 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/pc/js/app.js', 'public/pc/js')
+    .sass('resources/assets/pc/sass/app.scss', 'public/pc/css')
+    .version();
+
+mix.js('resources/assets/mobile/js/app.js', 'public/mobile/js')
+    .sass('resources/assets/mobile/sass/app.scss', 'public/mobile/css')
+    .version();
