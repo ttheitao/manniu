@@ -11,12 +11,11 @@
     <link href="{{ mix('mobile/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app" class="{{ route_class() }}-page">
-    @include('mobile.layouts._header')
+<div id="app">
     <div class="container">
         @yield('content')
+        <public-nav></public-nav>
     </div>
-    @include('mobile.layouts._footer')
 </div>
 <!-- JS 脚本 -->
 <script src="{{ mix('mobile/js/app.js') }}"></script>
