@@ -29,4 +29,15 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+    /**
+     * Display the form to request a password reset link.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLinkRequestForm()
+    {
+        $view = is_mobile() ? 'mobile.auth.passwords.email' : 'pc.auth.passwords.email';
+        return view($view);
+    }
 }
