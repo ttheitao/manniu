@@ -2,5 +2,5 @@
 @section('title', ' Mobile首页')
 
 @section('content')
-    
+
 @stop
